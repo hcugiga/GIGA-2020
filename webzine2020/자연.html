@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020 움직임</title>
+    <script src="webfont.js"></script>
+    <style>
+        @keyframes moving {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        * {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: white;
+            text-align: center;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        html,body, .background{
+            width:100%;
+            height:100%;
+            padding:0;
+            margin:0;
+        }
+
+        h2 {
+            padding-top: 20px;
+            margin-top: 0px;
+            position: relative;
+            top: 4%;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        div {
+            font-size: 22.5px;
+        }
+
+        .A,
+        .B,
+        .C {
+            height: 500px;
+            width: 300px;
+            border: 5px solid white;
+            margin: 0;
+        }
+
+        .A:hover,
+        .B:hover,
+        .C:hover {
+            opacity: 0.5;
+        }
+
+        p {
+            font-size: 30px !important;
+            margin-top: 15px;
+            margin-bottom: 80px;
+        }
+
+        .A {
+            position: absolute;
+            top: 25%;
+            left: 10%;
+        }
+
+        .B {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            margin-left: -150px;
+        }
+
+        .C {
+            position: absolute;
+            right: 10%;
+            top: 25%
+        }
+
+        .back,
+        .back_2 {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+            border-radius: 20px;
+            line-height: 50px;
+        }
+
+        ol {
+            padding: 0;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            padding: 0;
+            top: 60px;
+            position: relative;
+        }
+
+        h3 {
+            margin-top: 0;
+            position: relative;
+            top: 25px;
+            font-size: 40px;
+        }
+
+        .container {
+            height: 100%;
+
+        }
+
+        .background {
+            z-index: -3;
+            position:absolute;
+            left:0;
+            top:0;
+            margin:0;
+            padding:0;
+            background: linear-gradient(to bottom right, #51aa6c, #1f583d);
+            border-radius: none !important;
+        }
+
+        .C1,
+        .C2,
+        .C3 {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(to top left, #51aa6c, #1f583d);
+            width: 250px;
+            height: 250px;
+            z-index: -2;
+        }
+
+        .C1 {
+            left: 50px;
+            bottom: 250px;
+        }
+
+        .C2 {
+            right: 120px;
+            top: -50px;
+            width: 400px !important;
+            height: 400px !important;
+        }
+
+        .C3 {
+            right: 40px;
+            bottom: 20px;
+            width: 150px !important;
+            height: 150px !important;
+        }
+
+        img,
+        .스티미,
+        .creo,
+        .sin {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 40px;
+        }
+
+        .sin {
+            background-color: white;
+        }
+
+        .스티미>img {
+
+            height: 70px;
+            width: auto;
+            border-radius: 10px;
+            border: white solid 1px;
+            position: relative;
+            margin-left: -30px;
+            top: 40px;
+        }
+
+        .creo>img {
+
+            width: auto;
+            top: 30px;
+            margin-left: -25px;
+            height: 90px;
+            border-radius: 10px;
+            position: relative;
+            border: white solid 1px;
+        }
+
+        .sin>img {
+            position: relative;
+            width: 120px;
+            height: auto;
+            border-radius: 0;
+            top: 10px;
+        }
+
+        .공학,
+        .자연_공학,
+        .자연_학술 {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .기가 {
+            position: absolute;
+            border-radius: 40px;
+            width: 180px;
+            height: 180px;
+            background-color: white;
+            left: 30%;
+            top: 25%;
+            margin-top: -15px;
+            margin-left: -15px;
+        }
+
+        .기가>img {
+            position: relative;
+            margin: 0;
+            top: 15px;
+            border-radius: 0;
+        }
+
+        .zet {
+            left: 30%;
+            top: 60%;
+            border: solid 1px white;
+        }
+
+        .삼디 {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 40px;
+            background-color: white;
+            right: 30%;
+            top: 60%;
+        }
+
+        .삼디>img {
+            position: relative;
+            margin: 0;
+            width: auto;
+            margin-left: -115px;
+            height: 150px;
+            left: 60px;
+        }
+
+        .we {
+            right: 30%;
+            top: 25%;
+        }
+
+        .스티미 {
+            left: 30%;
+            top: 25%;
+        }
+
+        .creo {
+            left: 30%;
+            top: 60%;
+        }
+
+        .페리먼트 {
+            right: 30%;
+            top: 60%;
+        }
+
+        .sin {
+            right: 30%;
+            top: 25%;
+        }
+
+        .셀즈,
+        .dnt,
+        .Alchemy,
+        .하바,
+        .큐브,
+        .KDX {
+            margin-left: -75px;
+            margin-top: -75px;
+        }
+
+        .셀즈 {
+            left: 25%;
+            top: 35%;
+            border: solid 1px white;
+        }
+
+        .dnt {
+            left: 25%;
+            top: 75%;
+        }
+
+        .Alchemy {
+            left: 75%;
+            top: 75%;
+        }
+
+        .하바 {
+            left: 50%;
+            top: 35%;
+            border: solid 1px white;
+        }
+
+        .큐브 {
+            left: 50%;
+            top: 75%;
+        }
+
+        .KDX {
+            left: 75%;
+            top: 35%;
+            border: solid 1px white;
+        }
+
+        @media screen and (max-height:714px) {
+            .container {
+                height: 600px;
+            }
+
+            .공학,
+            .자연_공학,
+            .자연_학술 {
+                height: 714px;
+            }
+
+            .A,
+            .B,
+            .C {
+                top: 120px;
+            }
+        }
+
+        @media screen and (max-width:1205px) {
+            .container {
+                width: 1305px;
+            }
+
+            .공학 {
+                width: 1205px;
+            }
+
+            .A {
+                left: 100px;
+            }
+
+            .B {
+                left: 500px;
+                margin-left: 0;
+            }
+
+            .C {
+                left: 900px;
+            }
+
+            h2 {
+                left: 652.5px;
+                width: 889.6px;
+                margin-left: -444.8px;
+
+            }
+
+            .공학_p {
+                width: 200px;
+                margin-left: -100px;
+                position: absolute;
+                left: 602.5px;
+            }
+
+        }
+
+        @media screen and (max-width:900px) {
+
+            .자연_공학,
+            .자연_학술 {
+                width: 900px;
+            }
+
+            h3 {
+                width: 200px;
+                margin-left: -100px;
+                position: absolute;
+                left: 450px;
+            }
+
+            .스티미>img {
+                position: absolute;
+                left: 20%;
+                margin-left: -105px;
+            }
+
+            .creo>img {
+                position: absolute;
+                left: 20%;
+                margin-left: -100.5px;
+            }
+
+            .sin {
+                right: 20%;
+            }
+
+            .페리먼트 {
+                right: 20%;
+            }
+        }
+    </style>
+</head>
+
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+    <div class="background">
+        <div class="C1"></div>
+        <div class="C2"></div>
+        <div class="C3"></div>
+    </div>
+    <h2>자연 학술</h2>
+    <a href="index.html">
+        <div class="back"><i class="fas fa-arrow-left" style="color:black;"></i></div>
+    </a>
+
+    <a href="#">
+        <div class="back_2" onclick="location.reload();" style="display:none; z-index:15;"><i class="fas fa-arrow-left"
+                style="color:black;"></i></div>
+    </a>
+
+    <!-- 공학 서브 메인 -->
+    <h3 class="공학_p" style="display:none;">공학</h3>
+    <div class="공학" style="display:none;">
+        <a href="GIGA/index.html">
+            <div class="기가"><img src="gigalogo.svg" onclick="alert('정규 동아리입니다.');"></div>
+        </a>
+        <a href="ZET/index.html#f"><img src="ZET로고_1 (2).png" class="zet" onclick="alert('주말자율 동아리입니다.');"></a>
+        <a href="三D/index.html#f">
+            <div class="삼디"><img src="삼D로고_1 (1).png" onclick="alert('정규 동아리입니다.');"></div>
+        </a>
+        <a href="#"><img src="WE로고_1 (1).jpg" class="we" onclick="alert('신입생을 모집하지 않는 동아리입니다.');"></a>
+    </div>
+    <!-- 자연 공학 서브 메인 -->
+    <h3 class="자연_공학_p" style="display: none;">자연 과학</h3>
+    <div class="자연_공학" style="display: none;">
+        <a href="Cells/index.html#f"><img src="CELLS_1.svg" class="셀즈" onclick="alert('정규 동아리입니다.');"></a>
+        <a href="DNT/index.html#f"><img src="DNT로고_3.png" class="dnt" onclick="alert('정규 동아리입니다.');"></a>
+        <a href="HUIT/index.html#f"><img src="HUIT로고.png" class="Alchemy" alt="위뜨" onclick="alert('주중자율 동아리입니다.');"></a>
+        <a href="하늘바라기/index.html#f"><img src="하늘바라기로고_1.png" class="하바" onclick="alert('주말자율 동아리입니다.');"></a>
+        <a href="CUBE/index.html#f"><img src="큐브로고_1 (1).png" class="큐브" onclick="alert('정규 동아리입니다.');"></a>
+        <a href="KDX/index.html#f"><img src="KDX로고_1.png" class="KDX" onclick="alert('정규 동아리입니다.');"></a>
+    </div>
+    <!-- 자연 학술 서브 메인 -->
+    <h3 class="자연_학술_p" style="display: none;">응용 과학</h3>
+    <div class="자연_학술" style="display:none;">
+        <a href="스티미/index.html#f">
+            <div class="스티미"><img src="steami - 안진형 (1).jpg" onclick="alert('주말자율 동아리입니다.');"></div>
+        </a>
+        <a href="CREO/index.html#f">
+            <div class="creo"><img src="creo로고_3 (1).jpg" onclick="alert('정규 동아리입니다.');"></div>
+        </a>
+        <a href="페리먼트/index.html#f"><img src="페리먼트로고_1 (1).png" class="페리먼트" onclick="alert('정규 동아리입니다.');"></a>
+        <a href="SIN/index.html#f">
+            <div class="sin"><img src="SIN로고_1 (1).png" onclick="alert('정규 동아리입니다.');"></div>
+        </a>
+    </div>
+
+    <div class="container" style="border-radius:40px;">
+        <a href="#">
+            <div class="A" style="border-radius:40px;">
+                <p>공학</p>
+                <ul style="margin-top: 0; top:45px;">
+                    <ol>GIGA</ol>
+                    <ol>ZET</ol>
+                    <ol>三D</ol>
+                    <ol>WE</ol>
+                </ul>
+            </div>
+        </a>
+        <a href="#">
+            <div class="B" style="border-radius:40px;">
+                <p>자연 과학</p>
+                <ol>CELLS</ol>
+                <ol>DNT</ol>
+                <ol>HUIT</ol>
+                <ol>하늘바라기</ol>
+                <ol>CUBE</ol>
+                <ol>KDX</ol>
+            </div>
+        </a>
+        <a href="#">
+            <div class="C" style="border-radius:40px;">
+                <p>응용 과학</p>
+                <ul style="margin-top: 0; top:45px;">
+                    <ol>STEAMI</ol>
+                    <ol>CREO</ol>
+                    <ol>페리먼트</ol>
+                    <ol>SIN</ol>
+                </ul>
+            </div>
+        </a>
+    </div>
+    <script>
+        const h2 = document.querySelector("h2");
+        const container = document.querySelector(".container");
+        const 공학 = document.querySelector(".공학");
+        const 자공 = document.querySelector(".자연_공학");
+        const 자학 = document.querySelector(".자연_학술");
+
+        const back = document.querySelector(".back");
+        const back_2 = document.querySelector(".back_2");
+
+        const 공_p = document.querySelector(".공학_p");
+        const 자연_공학_p = document.querySelector(".자연_공학_p");
+        const 자연_학술_p = document.querySelector(".자연_학술_p");
+
+        document.querySelector(".A").onclick = () => {
+            h2.style.display = "none";
+            container.style.display = "none";
+            back.style.display = "none";
+            back_2.style.display = "block";
+            공_p.style.display = "block";
+            공학.style.display = "block";
+        }
+        document.querySelector(".B").onclick = () => {
+            h2.style.display = "none";
+            container.style.display = "none";
+            back.style.display = "none";
+            back_2.style.display = "block";
+            자연_공학_p.style.display = "block";
+            자공.style.display = "block";
+        }
+        document.querySelector(".C").onclick = () => {
+            h2.style.display = "none";
+            container.style.display = "none";
+            back.style.display = "none";
+            back_2.style.display = "block";
+            자연_학술_p.style.display = "block";
+            자학.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

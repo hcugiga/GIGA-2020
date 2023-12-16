@@ -1,0 +1,1 @@
+const header=document.querySelector("nav");var timeout;function mouseStop(){header.className="off","off"===header.className&&(header.style.marginTop="-100px")}document.addEventListener("mousemove",function(){header.className="on",timeout&&clearTimeout(timeout),timeout=setTimeout(mouseStop,1e3),"on"===header.className&&(header.style.margin="0")});

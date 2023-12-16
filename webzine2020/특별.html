@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020 움직임</title>
+    <script src="webfont.js"></script>
+    <style>
+        @keyframes moving {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        * {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: white;
+            text-align: center;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        html,body, .background{
+            width:100%;
+            height:100%;
+            padding:0;
+            margin:0;
+        }
+
+        h2 {
+            margin-top: 0;
+            position: relative;
+            top: 4%;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        h3 {
+            margin-top: 0;
+            top: 25px;
+            font-size: 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        div {
+            font-size: 22.5px;
+        }
+
+        .A,
+        .B {
+            height: 500px;
+            width: 300px;
+            border: 5px solid white;
+            margin: 0;
+        }
+
+        .A:hover,
+        .B:hover {
+            opacity: 0.5;
+        }
+
+        p {
+            font-size: 30px !important;
+            margin-top: 15px;
+            margin-bottom: 80px;
+        }
+
+        .A {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+        }
+
+        .B {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+        }
+
+        .back,
+        .back_2 {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+            border-radius: 20px;
+            line-height: 50px;
+        }
+
+        ol {
+            padding: 0;
+        }
+
+        img,
+        .비요뜨,
+        .글애돝,
+        .hcutube,
+        .페이드인 {
+            width: 150px;
+            height: 150px;
+            position: absolute !important;
+            border-radius: 40px;
+            margin-left: -75px;
+            margin-top: -75px;
+        }
+
+        .A_d,
+        .B_d {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .hcu>img,
+        .byod>img,
+        .글>img {
+            position: relative !important;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .background {
+            z-index: -3;
+            position:absolute;
+            left:0;
+            top:0;
+            margin:0;
+            padding:0;
+            background: linear-gradient(to bottom right, #6b6b6b, #333333);
+            border-radius: none !important;
+        }
+
+        .C1,
+        .C2,
+        .C3 {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(to top left, #6b6b6b, #333333);
+            width: 250px;
+            height: 250px;
+            z-index: -2;
+        }
+
+        .C1 {
+            left: 50px;
+            bottom: 250px;
+        }
+
+        .C2 {
+            right: 120px;
+            top: -50px;
+            width: 400px !important;
+            height: 400px !important;
+        }
+
+        .C3 {
+            right: 40px;
+            bottom: 20px;
+            width: 150px !important;
+            height: 150px !important;
+        }
+
+        /* .아리솔,.코엑스{
+                    top:27.5%;
+                    left:20%;
+
+                }
+                .글애돝,.CET{
+                    left:20%;
+                    top:72.5%;
+                }
+                .hcutube,.ATHENS{
+                    left:80%;
+                    margin-top:-75px;
+                    top:72.5%;
+                }
+                .HBS,.페이드인{
+                    left:80%;
+                    margin-left:-75px !important;
+                    top:27.5%;
+                }
+                .비요뜨,.올라{
+                    left:50%;
+                    margin-left:-75px !important;
+                    top:52.5%;
+                } */
+
+        .아리솔,
+        .CET {
+            left: 27%;
+        }
+
+        .HBS,
+        .글애돝 {
+            right: 27%;
+        }
+
+        .아리솔,
+        .HBS {
+            top: 35%;
+        }
+
+        .CET,
+        .글애돝 {
+            top: 70%;
+        }
+
+        h3 {
+            position: relative;
+            text-align: center;
+        }
+
+        .비요뜨>img {
+            margin-top: 0;
+            margin-left: 0;
+            left: 0;
+        }
+
+        .hcutube>img,
+        .글애돝>img,
+        .페이드인>img {
+            margin-top: 0;
+        }
+
+        .올라 {
+            width: 180px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .비요뜨 {
+            width: 180px !important;
+            height: 150px !important;
+            border-radius: 10px !important;
+        }
+
+        .비요뜨>img {
+
+            height: auto;
+            width: 180px;
+            top: 20px;
+        }
+
+        ul {
+            padding: 0;
+            top: 25px;
+            position: relative;
+        }
+
+        ul>ol {
+            margin: 35px;
+        }
+
+        .코엑스,
+        .ATHENS {
+            left: 25%;
+        }
+
+        .페이드인,
+        .올라 {
+            left: 50%;
+        }
+
+        .비요뜨,
+        .hcutube {
+            left: 75%;
+        }
+
+        .코엑스,
+        .페이드인,
+        .비요뜨 {
+            top: 30%;
+        }
+
+        .ATHENS,
+        .올라,
+        .hcutube {
+            top: 70%;
+        }
+
+        .올라 {
+            top: 75% !important;
+        }
+
+        @media screen and (max-height:660px) {
+            .container {
+                height: 680px;
+            }
+
+            .A_d,
+            .B_d {
+                height: 720px;
+            }
+
+            .A,
+            .B {
+                top: 120px;
+            }
+
+            .HBS,
+            .아리솔 {
+                top: 200px;
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (max-width:850px) {
+            .container {
+                width: 850px;
+            }
+
+            h2,
+            h3 {
+                width: 300px;
+                position: absolute;
+                margin-left: -150px;
+                left: 425px;
+            }
+
+            .A {
+                left: 85.037px;
+            }
+
+            .B {
+                left: 455.362px;
+            }
+
+            .A_d,
+            .B_d {
+                width: 850px;
+            }
+
+            .아리솔 {
+                top: 27.5%;
+                left: 133.333333px;
+                margin-left: 0;
+            }
+
+            .CET {
+                left: 133.333333px;
+                top: 72.5%;
+                margin-left: 0;
+            }
+
+            .HBS {
+                position: relative;
+                right: 133.333333px;
+                top: 27.5%;
+            }
+
+            .글애돝 {
+                position: relative;
+                right: 133.333333px;
+                top: 72.5%;
+            }
+
+            .asdf {
+                width: 450px;
+                margin-left: -225px;
+            }
+        }
+    </style>
+</head>
+
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+    <div class="background">
+        <div class="C1"></div>
+        <div class="C2"></div>
+        <div class="C3"></div>
+    </div>
+
+    <h2 class="asdf">정책 / 특별 동아리</h2>
+    <!-- A 서브 메인 -->
+    <h3 class="A_p" style="display: none;">정책 동아리 </h3>
+    <div class="A_d" style="display: none;">
+        <a href="글애돝/index.html#f">
+            <div class="글애돝" style="width:150px; height:150px; background-color:white; border-radius:40px;"><img
+                    src="글애돝로고_1 (1).png" style="width:150px; height:auto; border-radius:0px; top:35px;"
+                    onclick="alert('정규 동아리입니다');"></div>
+        </a><a href="HBS/index.html#f"><img src="HBS로고_1.png" class="HBS" style="height:130px; width:150px;"
+                onclick="alert('주중자율 동아리입니다');"></a><a href="아리솔/index.html#f"><img src="아리솔로고_1.jpeg" class="아리솔"
+                onclick="alert('주중자율 동아리입니다');"></a><a href="CET/index.html#f"><img src="CET로고_1.png" class="CET"
+                style="border:white solid 1px;" onclick="alert('주중자율 동아리입니다');"></a>
+    </div>
+    <!-- B 서브 메인 -->
+    <h3 class="B_p" style="display: none;">특별 동아리</h3>
+    <div class="B_d" style="display: none;">
+        <a href="COEX/index.html#f"><img src="코엑스로고_2.png" class="코엑스" onclick="alert('주말자율 동아리입니다');"></a><a
+            href="Athens/index.html#f"><img src="ATHENS로고_1.jpg" class="ATHENS" onclick="alert('주중자율 동아리입니다');"></a><a
+            href="페이드인/index.html#f">
+            <div class="페이드인" style="background-color:white; border-radius: 40px; width:150px; height:150px;"><img
+                    src="페이드인로고_1.png" style="top:10px;" onclick="alert('주말자율 동아리입니다');"></div>
+        </a><a href="HOLA/index.html#f"><img src="올라로고_1.PNG" class="올라" onclick="alert('주말자율 동아리입니다');"></a><a
+            href="HCUtube/index.html#f">
+            <div class="hcutube" style="width:150px; height:150px; background-color:white; border-radius:40px;"><img
+                    src="엣치씨유튜브로고_4.png" style="top:20px;" onclick="alert('주중자율 동아리입니다');"></div>
+        </a><a href="BYOD/index.html#f">
+            <div class="비요뜨" style="width:150px; height:150px; background-color:white; border-radius:40px;"><img
+                    src="BYOD로고_1.png" onclick="alert('정규 동아리입니다');"> </div>
+        </a>
+    </div>
+    <a href="index.html">
+        <div class="back" style="z-index:20;"><i class="fas fa-arrow-left" style="color:black;"></i></div>
+    </a>
+
+    <a href="#">
+        <div class="back_2" onclick="location.reload();" style="display:none; z-index:20;"><i class="fas fa-arrow-left"
+                style="color:black;"></i></div>
+    </a>
+    <div class="container" style="border-radius:40px;">
+        <a href="#">
+            <div class="A">
+                <p>정책 동아리</p>
+                <ul>
+                    <ol>글애돝</ol>
+                    <ol>CET</ol>
+                    <ol>HBS</ol>
+                    <ol>아리솔</ol>
+                </ul>
+            </div>
+        </a>
+        <a href="#">
+            <div class="B">
+                <p>특별 동아리</p>
+                <ol>BYOD</ol>
+                <ol>COEX</ol>
+                <ol>HCUtube</ol>
+                <ol>ATHENS</ol>
+                <ol>fade in</ol>
+                <ol>HAWGOLA</ol>
+            </div>
+        </a>
+    </div>
+    <script>
+        const h2 = document.querySelector("h2");
+        const container = document.querySelector(".container");
+
+        const back = document.querySelector(".back");
+        const back_2 = document.querySelector(".back_2");
+
+        const A_p = document.querySelector(".A_p");
+        const B_p = document.querySelector(".B_p");
+        const A_d = document.querySelector(".A_d");
+        const B_d = document.querySelector(".B_d");
+
+        document.querySelector(".A").onclick = () => {
+            h2.style.display = "none";
+            container.style.display = "none";
+            back.style.display = "none";
+            back_2.style.display = "block";
+            A_p.style.display = "block";
+            A_d.style.display = "block";
+        }
+        document.querySelector(".B").onclick = () => {
+            h2.style.display = "none";
+            container.style.display = "none";
+            back.style.display = "none";
+            back_2.style.display = "block";
+            B_p.style.display = "block";
+            B_d.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
