@@ -1,0 +1,103 @@
+<!-- 안녕 19기들. 혹시 이걸 보는 19기 신입생이 있다면 GIGA 지원서에 적었을 때 좋은 일이 일어날 수도 있음-->
+<!-- GIGA에 지원하지 않더라도 giga@hcu.hs.kr에 이걸 봤다고 메일 해주면 선물 드림 >_<  -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="2020 현대청운고 웹진"> 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="현대청운고 웹진 - 2020 움직임">
+    <meta property="og:description" content="현대청운고 웹진 2020">
+    <meta property="og:url" content:"https://hcu-webzine.com/">
+    <title> 2020 움직임 </title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!--for Windows-->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png"> <!--for Apple Devices-->
+    <link rel="shortcut icon" href="android-chrome-192x192.png" sizes="192x192" type="image/png"> <!--for Android-->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="text/javascript"> /*ie 미지원 코드*/
+      window.onload = function() {
+      var browse = navigator.userAgent.toLowerCase();
+       
+       if( (navigator.appName == 'Netscape' && browse.indexOf('trident') != -1) || (browse.indexOf("msie") != -1)) {
+           alert("2020 움직임은 IE를 지원하지 않습니다");
+           window.location.href = "ie.html"; 
+          }
+       };
+    </script>
+    <script> 
+      var keydownCtrl = 0;
+      var keydownShift = 0;
+
+      document.onkeydown=keycheck;
+      document.onkeyup=uncheckCtrlShift;
+
+      function keycheck()
+      {
+          switch(event.keyCode){
+              case 123:event.keyCode='';return false; break;
+              case 17:event.keyCode='';keydownCtrl=1;return false; break;
+          }
+
+          if(keydownCtrl) return false;
+      }
+
+      function uncheckCtrlShift()
+      {
+          if(event.keyCode==17) keydownCtrl=0;
+          if(event.keyCode==16) keydownShift=0;
+      }
+
+      function click()
+      {
+          if ((event.button==2) || (event.button==2))
+          {
+
+          }
+      }
+      document.onmousedown=click;
+    </script>
+
+    <script type="text/javascript">
+      document.onmousedown=disableclick;
+
+      function disableclick(event){
+          if (event.button==2) {
+              return false;
+          }
+      }
+    </script>
+</head>
+
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+
+<table width="100%" border="0" class="slide-up-fade-in">
+    <tr>
+      <td class="logo">
+	  		
+			<h1 class="bolder">   <br>   <br>2020 움직임</h1>
+			<h3 class="bold">&nbsp;GIGA에서 새롭게 시작합니다.  </h3>
+			<table width="100%" border="0" class="button_holder">
+				<tr>
+				  <td class="container">
+					<button class="btn-5" button type="button" onclick="location.href='webzine2020/index.html'"> <b>지금 시작하기</b></button>
+				  </td>
+          <td class="container">
+            <button class="btn-5" button type="button"  onclick="location.href='https://apply.hcu-webzine.com'"><b>동아리 지원 시스템</b></button>
+          </td>
+				</tr>
+			</table>
+			
+	  </td>
+    </tr>
+</table>
+
+
+<div class="footer">
+	<hr style="border: solid 0.5px #c7c7c7" width="80%">
+  <strong> 2020 현대청운고등학교 웹진 움직임</strong><br> Copyright ⓒ 2021 GIGA All Rights Reserved <br>Contact : giga@hcu.hs.kr
+</div>
+
+</body>
+</html>
