@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>글애돝</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../sctop.js"></script>
+        <script src="../js.js" defer></script>
+        <script src="../jquery.js"></script>
+        <script src="../jquery.lazyload.min.js"></script>
+        <script src="../lazyset.js"></script>
+        
+        <script type="text/javascript"> /*ie 미지원 코드*/
+            window.onload = function() {
+                var browse = navigator.userAgent.toLowerCase();
+                
+                if( (navigator.appName == 'Netscape' && browse.indexOf('trident') != -1) || (browse.indexOf("msie") != -1)) {
+                    alert("2020 움직임은 IE를 지원하지 않습니다");
+                    window.location.href = "../ie.html"; 
+                   }
+                };
+        </script>
+        <script> /*저작권 보호용 코드*/
+               var keydownCtrl = 0;
+               var keydownShift = 0;
+         
+               document.onkeydown=keycheck;
+               document.onkeyup=uncheckCtrlShift;
+         
+               function keycheck()
+               {
+                   switch(event.keyCode){
+                       case 123:event.keyCode='';return false; break;
+                       case 17:event.keyCode='';keydownCtrl=1;return false; break;
+                   }
+         
+                   if(keydownCtrl) return false;
+               }
+         
+               function uncheckCtrlShift()
+               {
+                   if(event.keyCode==17) keydownCtrl=0;
+                   if(event.keyCode==16) keydownShift=0;
+               }
+         
+               function click()
+               {
+                   if ((event.button==2) || (event.button==2))
+                   {
+         
+                   }
+               }
+               document.onmousedown=click;
+        </script>
+        <script type="text/javascript">
+               document.onmousedown=disableclick;
+         
+               function disableclick(event){
+                   if (event.button==2) {
+                       return false;
+                   }
+               }
+        </script>
+        <style>
+            html,body {
+            width:100%;
+            height:100%;
+            margin:0;
+            background-color: rgb(232, 228, 217);
+            
+        }
+        *{
+            transition-property: all;
+            transition-duration: 0.7s;
+        }
+        .container::-webkit-scrollbar{
+            display:none;
+        }
+        .container{
+            -ms-overflow-style: none;
+            scrollbar-width:none;
+            height:100%;
+            position:fixed;
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            overflow:auto;
+            margin: 0;
+        }
+        img.lazy {
+            background-image: url('../load.gif');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        div{
+            margin: 0;
+        }
+
+        nav{
+            position:fixed;
+            top:0;
+            z-index: 30;
+            width:100%;
+            height:60px;
+            display:flex;
+            justify-content:center;
+            margin-top: 0;
+            vertical-align: middle;
+/* 내비 배경색 */
+            background-color: rgba(232, 228, 217,0.4);
+        }
+        nav>a{
+            text-decoration:none !important;
+            z-index: 1;
+            vertical-align: middle;
+        }
+        ol{
+            position:relative;
+            margin:0;
+            top:50%;
+            margin-top:-16px;
+            font-size:20px;
+        }
+        ol>a{
+            padding:20px;
+        }
+        a{  text-decoration: none;
+/* 내비 글자색 */
+            color: rgb(0,0,0);
+        }
+        p{
+            width: 100%;
+            margin-top: 0;
+            text-align:center;
+            margin-bottom:0;
+/* ppt배경색 */
+            background-color: rgb(232, 228, 217);
+            color: rgb(0,0,0);
+        }
+        .page{
+            scroll-snap-align:start;
+            margin: 0;
+        }
+        .page.b::before, .page.c::before, .page.d::before, .page.e::before{
+            display:none;
+            content:"";
+            width:80%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        
+/* 로고 margin값 수정 */
+        .logo{
+            height: 60px;
+        }
+    </style>
+    </head>
+
+    <body class="body" oncontextmenu='return false' onselectstart='return false' ondragstart='return false'><!--우클릭방지--><!--<onmousedown="cleartime(event);">-->
+
+        <div class="container">
+            <div class="page f" id="f"><p><img src="1.PNG" width="60%"></p>
+                <nav class="off"> <!--<onmouseenter="mouseon();" onmouseleave="mouseleave();">-->
+                    <!-- 로고 파일명, 확장자 수정 -->
+                                    <div><a href="#f"><img class="logo" src="logo.png"></a></div>
+                                    <ol><a href="#b">동아리 소개</a></ol>
+                                    <ol><a href="#c">활동 소개</a></ol>
+                                </nav>
+            </div>
+            <div class="page b" id="b"><p><img class="lazy" data-original="3.PNG" width="60%"></p></div>
+            <div class="page c" id="c"><p><img class="lazy" data-original="4.PNG" width="60%"></p></div>
+            <div class="page c" id="c"><p><img class="lazy" data-original="5.PNG" width="60%"></p></div>
+            <div class="page c" id="c"><p><img class="lazy" data-original="6.PNG" width="60%"></p></div>
+            <div class="page c" id="c"><p><img class="lazy" data-original="7.PNG" width="60%"></p></div>
+            <div class="page c" id="c"><p>COPYRIGHT ⓒ 2020 글애돝 & GIGA ALL RIGHTS RESERVED</p></div>
+            <div class="page e" id="e"><p>&nbsp;&nbsp;</p></div>
+        </div>
+    </body>
+    </html>
